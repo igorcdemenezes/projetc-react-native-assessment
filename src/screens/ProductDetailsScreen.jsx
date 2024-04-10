@@ -1,16 +1,16 @@
-import React from "react";
-import { Text, View, Image, StyleSheet, scrol } from "react-native";
-import { ScrollView } from "react-native-web";
+import { Text, View, Image, StyleSheet } from "react-native";
+import { ScrollView } from "react-native";
 
 export default function ProductDetailsScreen({ product }) {
+  const { name, description, price } = product;
   return (
     <ScrollView>
       <View style={styles.container}>
         <Image style={styles.image} source={{ uri: product.image }} />
         <View style={styles.infoContainer}>
-          <Text style={styles.name}>{product.name}</Text>
-          <Text style={styles.description}>{product.description}</Text>
-          <Text style={styles.price}>R$ {product.price}</Text>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.description}>{description}</Text>
+          <Text style={styles.price}>R$ {price}</Text>
         </View>
         <View style={styles.specificationContainer}>
           {Object.entries(product.technicalSpecifications).map(
@@ -38,15 +38,17 @@ const styles = StyleSheet.create({
   infoContainer: {
     paddingHorizontal: 20,
     alignItems: "center",
+    marginBottom: 30,
   },
   name: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: "bold",
     marginBottom: 10,
     marginTop: 10,
     textAlign: "center",
   },
   description: {
+    color: "#585858",
     fontSize: 18,
     marginBottom: 10,
     textAlign: "center",

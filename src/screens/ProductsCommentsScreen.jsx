@@ -1,4 +1,3 @@
-import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 
 export default function ProductCommentsScreen({ product }) {
@@ -7,9 +6,11 @@ export default function ProductCommentsScreen({ product }) {
       <View style={styles.container}>
         {product.comments.map((comment, index) => (
           <View key={index}>
-            <Text>Usuário: {comment.user}</Text>
-            <Text>Comentário: {comment.comment}</Text>
-            <Text>Nota: {comment.rating}</Text>
+            <Text style={styles.userComment}>Usuário: {comment.user}</Text>
+            <Text style={styles.commentComment}>
+              Comentário: {comment.comment}
+            </Text>
+            <Text style={styles.ratingComment}>Nota: {comment.rating}/5</Text>
           </View>
         ))}
       </View>
@@ -20,31 +21,20 @@ export default function ProductCommentsScreen({ product }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#F5F5F5",
+    padding: 16,
   },
-  image: {
-    width: "100%",
-    height: 200,
-  },
-  infoContainer: {
-    paddingHorizontal: 20,
-    alignItems: "center",
-  },
-  name: {
-    fontSize: 24,
+  userComment: {
+    fontSize: 16,
     fontWeight: "bold",
-    marginBottom: 10,
-    marginTop: 10,
-    textAlign: "center",
+    marginBottom: 8,
   },
-  description: {
-    fontSize: 18,
-    marginBottom: 10,
-    textAlign: "center",
+  commentComment: {
+    fontSize: 14,
+    marginBottom: 8,
   },
-  price: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "green",
-    textAlign: "center",
+  ratingComment: {
+    fontSize: 14,
+    color: "#333",
   },
 });

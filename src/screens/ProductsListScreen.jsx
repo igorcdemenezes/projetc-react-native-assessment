@@ -1,10 +1,4 @@
-import {
-  View,
-  FlatList,
-  StyleSheet,
-  TouchableOpacity,
-  useWindowDimensions,
-} from "react-native";
+import { View, FlatList, TouchableOpacity } from "react-native";
 import ProductCard from "../components/ProductCard";
 import { useNavigation } from "@react-navigation/native";
 import mockData from "../mock.json";
@@ -13,7 +7,7 @@ export default function ProductListScreen() {
   const navigation = useNavigation();
 
   const handleProduct = (product) => {
-    navigation.navigate("ProductInfo", { product });
+    navigation.navigate("Informações gerais", { product });
   };
 
   const productList = Object.keys(mockData).map((key) => ({

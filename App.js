@@ -10,9 +10,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
-        <Drawer.Screen name="ProductList" component={ProductsListScreen} />
-        <Drawer.Screen name="AboutScreen" component={AboutScreen} />
-        <Drawer.Screen name="ProductInfo" component={ProductInfoScreen} options={{
+        <Drawer.Screen name="Produtos" component={ProductsListScreen} />
+        <Drawer.Screen name="Sobre nós" component={AboutScreen} />
+        <Drawer.Screen name="Informações gerais" component={ProductInfoScreen} options={{
           drawerItemStyle: {
             display: 'none'
           },
